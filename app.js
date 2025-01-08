@@ -19,6 +19,10 @@ import companyRouter from './src/routes/company.js';
 import userRouter from './src/routes/user.js';
 
 //server health check
+
+app.use("/",(req,res)=>{
+  res.send("Welcome to PaidEarly Server");
+})
 app.use('/server/health', (req, res, next) => {
   res.send({ success: true, message: 'PaidEarly Server is running..' });
 });
